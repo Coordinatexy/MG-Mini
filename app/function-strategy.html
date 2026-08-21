@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>策略运行 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/function-strategy.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="策略运行页面">
+      <div class="ios-screen" id="strategyScreenRoot">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <a class="title-btn title-btn--back strategy-back-btn" href="./function.html" aria-label="返回上一页">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <h1 class="title-text">策略运行</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+
+        <main class="screen-content strategy-screen">
+          <section class="app-shell strategy-shell">
+            <div class="strategy-date-bar">
+              <button class="strategy-date-bar__field" type="button" id="strategyDateTrigger" aria-label="选择日期" aria-haspopup="dialog" aria-expanded="false">
+                <span id="strategyDateLabel">2026-07-22</span>
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <article class="strategy-group-card" data-strategy-group="ai-schedule">
+              <div class="strategy-group-card__header">
+                <h2>AI排程测试</h2>
+                <button
+                  class="strategy-switch strategy-switch--on"
+                  type="button"
+                  data-strategy-toggle="ai-schedule"
+                  aria-label="AI排程测试开关"
+                  aria-pressed="true"
+                >
+                  <span class="strategy-switch__thumb"></span>
+                </button>
+              </div>
+              <div class="strategy-table" role="table" aria-label="策略运行列表">
+                <div class="strategy-table__head" role="row">
+                  <span role="columnheader">编号</span>
+                  <span role="columnheader">策略运行时间</span>
+                  <span role="columnheader">运行策略</span>
+                </div>
+                <div class="strategy-table__row" role="row">
+                  <span role="cell">1</span>
+                  <span role="cell">00:00～09:00</span>
+                  <span role="cell">峰谷套利</span>
+                </div>
+                <div class="strategy-table__row strategy-table__row--link" role="row">
+                  <span role="cell">2</span>
+                  <span role="cell">09:00～00:00</span>
+                  <span role="cell"><a href="#strategyDetail" class="strategy-link" data-strategy-open-detail="ai-schedule">参数已由AI智能排程托管</a></span>
+                </div>
+              </div>
+              <div class="strategy-group-card__footer">
+                <a class="strategy-detail-btn" href="#strategyDetail" data-strategy-open-detail="ai-schedule">查看详情</a>
+              </div>
+            </article>
+
+            <article class="strategy-group-card strategy-group-card--inactive" data-strategy-group="summer">
+              <div class="strategy-group-card__header">
+                <h2>夏季</h2>
+                <button
+                  class="strategy-switch strategy-switch--off"
+                  type="button"
+                  data-strategy-toggle="summer"
+                  aria-label="夏季开关"
+                  aria-pressed="false"
+                >
+                  <span class="strategy-switch__thumb"></span>
+                </button>
+              </div>
+              <div class="strategy-table" role="table" aria-label="策略运行列表">
+                <div class="strategy-table__head" role="row">
+                  <span role="columnheader">编号</span>
+                  <span role="columnheader">策略运行时间</span>
+                  <span role="columnheader">运行策略</span>
+                </div>
+                <div class="strategy-table__row" role="row">
+                  <span role="cell">1</span>
+                  <span role="cell">00:00～00:00</span>
+                  <span role="cell">峰谷套利</span>
+                </div>
+              </div>
+              <div class="strategy-group-card__footer">
+                <a class="strategy-detail-btn" href="#strategyDetail" data-strategy-open-detail="summer">查看详情</a>
+              </div>
+            </article>
+          </section>
+        </main>
+
+        <section class="strategy-detail-sheet" id="strategyDetail" aria-label="策略详情" aria-hidden="true">
+          <div class="strategy-subpage-topbar">
+            <div class="status-bar" role="img" aria-label="状态栏"></div>
+            <div class="dynamic-island" aria-hidden="true"></div>
+            <header class="title-bar strategy-subpage-header" aria-label="策略详情页标题">
+              <button class="title-btn title-btn--back strategy-subpage-back" type="button" data-strategy-close-sheet aria-label="返回策略运行">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <h1 class="title-text">策略详情</h1>
+              <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+                <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+                <div class="mini-divider" aria-hidden="true"></div>
+                <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+              </div>
+            </header>
+          </div>
+          <div class="strategy-detail-sheet__scroll">
+            <div class="strategy-detail-sheet__inner">
+              <div class="strategy-detail-sheet__header">
+                <div class="strategy-detail-sheet__title-group">
+                  <span class="strategy-detail-sheet__prefix">当前策略</span>
+                  <h2 id="strategyDetailName">AI排程测试</h2>
+                </div>
+                <button
+                  class="strategy-switch strategy-switch--on"
+                  type="button"
+                  id="strategyDetailToggle"
+                  data-strategy-toggle="ai-schedule"
+                  aria-label="当前策略开关"
+                  aria-pressed="true"
+                >
+                  <span class="strategy-switch__thumb"></span>
+                </button>
+              </div>
+
+              <article class="strategy-detail-card is-collapsed" data-period-card>
+                <button class="strategy-detail-card__head" type="button" aria-expanded="false">
+                  <h3>时段1 <span>00:00～09:00</span></h3>
+                  <i class="fa-solid fa-chevron-down strategy-detail-card__chevron" aria-hidden="true"></i>
+                </button>
+                <div class="strategy-detail-card__body">
+                  <div class="strategy-detail-card__metrics">
+                    <div><span>充电预留容量</span><strong>--%</strong></div>
+                    <div><span>放电预留容量</span><strong>--%</strong></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="strategy-detail-card strategy-detail-card--highlight is-expanded" data-period-card>
+                <button class="strategy-detail-card__head" type="button" aria-expanded="true">
+                  <h3>时段2 <span class="strategy-time-emphasis">09:00～00:00</span> <em>正在生效</em></h3>
+                  <i class="fa-solid fa-chevron-up strategy-detail-card__chevron" aria-hidden="true"></i>
+                </button>
+                <div class="strategy-detail-card__body">
+                  <div class="strategy-detail-card__metrics">
+                    <div><span>充电预留容量</span><strong>--%</strong></div>
+                    <div><span>放电预留容量</span><strong>--%</strong></div>
+                  </div>
+                  <div class="strategy-engine-card">
+                    <div class="strategy-engine-card__header">
+                      <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                      <span>AI 智能算法排程进行中...</span>
+                    </div>
+                    <div class="strategy-stage-list">
+                      <article class="strategy-stage-item">
+                        <div class="strategy-stage-item__time">14:30~14:45</div>
+                        <div class="strategy-stage-item__row">
+                          <span>策略1</span>
+                          <b>峰谷套利</b>
+                          <i>待机</i>
+                          <em>未达套利阈值</em>
+                        </div>
+                      </article>
+                      <article class="strategy-stage-item strategy-stage-item--current">
+                        <div class="strategy-stage-item__time">14:45~15:00 <span class="strategy-current-badge">当前时段</span></div>
+                        <div class="strategy-stage-item__row">
+                          <span>策略1</span>
+                          <b>峰谷套利</b>
+                          <i>待机</i>
+                          <em>未达套利阈值</em>
+                        </div>
+                      </article>
+                      <article class="strategy-stage-item">
+                        <div class="strategy-stage-item__time">15:00~15:15</div>
+                        <div class="strategy-stage-item__row">
+                          <span>策略1</span>
+                          <b>峰谷套利</b>
+                          <i>待机</i>
+                          <em>未达套利阈值</em>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="strategy-engine-card__footer">
+                      <a class="strategy-view-all" href="#strategyDetailFull">查看全部</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="strategy-full-sheet" id="strategyDetailFull" aria-label="进一步策略详情" aria-hidden="true">
+          <div class="strategy-subpage-topbar">
+            <div class="status-bar" role="img" aria-label="状态栏"></div>
+            <div class="dynamic-island" aria-hidden="true"></div>
+            <header class="title-bar strategy-subpage-header" aria-label="全部策略详情页标题">
+              <button class="title-btn title-btn--back strategy-subpage-back" type="button" data-strategy-back-to-detail aria-label="返回策略详情">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <h1 class="title-text">策略详情</h1>
+              <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+                <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+                <div class="mini-divider" aria-hidden="true"></div>
+                <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+              </div>
+            </header>
+          </div>
+          <div class="strategy-full-sheet__scroll">
+            <div class="strategy-full-sheet__inner">
+              <div class="strategy-stage-list strategy-stage-list--full">
+                <article class="strategy-stage-item strategy-stage-item--current">
+                  <div class="strategy-stage-item__time">14:45~15:00 <span class="strategy-current-badge">当前时段</span></div>
+                  <div class="strategy-stage-item__row">
+                    <span>策略1</span>
+                    <b>峰谷套利</b>
+                    <i>待机</i>
+                    <em>未达套利阈值</em>
+                  </div>
+                </article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">15:00~15:15</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">15:15~15:30</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">15:30~15:45</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">15:45~16:00</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>充电</i><em>2720kW</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">16:00~16:15</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">16:15~16:30</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">16:30~16:45</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+                <article class="strategy-stage-item"><div class="strategy-stage-item__time">16:45~17:00</div><div class="strategy-stage-item__row"><span>策略1</span><b>峰谷套利</b><i>待机</i><em>未达套利阈值</em></div></article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="strategy-date-picker" id="strategyDatePicker" aria-hidden="true">
+          <button class="strategy-date-picker__backdrop" type="button" data-strategy-date-close aria-label="关闭日期选择"></button>
+          <section class="strategy-date-picker__sheet" role="dialog" aria-modal="true" aria-labelledby="strategyDatePickerTitle">
+            <div class="strategy-date-picker__header">
+              <button class="strategy-date-picker__cancel" type="button" data-strategy-date-close>取消</button>
+              <h2 id="strategyDatePickerTitle">选择日期</h2>
+              <button class="strategy-date-picker__confirm" type="button" id="strategyDateConfirm">确定</button>
+            </div>
+            <div class="strategy-date-picker__month">
+              <button type="button" id="strategyMonthPrev" aria-label="上个月"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <strong id="strategyMonthLabel"></strong>
+              <button type="button" id="strategyMonthNext" aria-label="下个月"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="strategy-date-picker__weekdays"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+            <div class="strategy-date-picker__days" id="strategyCalendarDays" aria-label="日期列表"></div>
+          </section>
+        </div>
+
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./js/function-strategy.js"></script>
+  </body>
+</html>

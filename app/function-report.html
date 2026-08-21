@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>经营报告 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/function-report.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="经营报告页面">
+      <div class="ios-screen">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <a class="title-btn title-btn--back" href="./function.html" aria-label="返回功能页">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <h1 class="title-text">经营报告</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+
+        <main class="screen-content report-screen">
+          <section class="app-shell report-shell">
+            <section class="report-hero" aria-label="报告封面">
+              <div class="report-hero__visual" aria-hidden="true">
+                <img class="report-hero__img" src="./images/report-hero.jpg" alt="" />
+                <div class="report-hero__mask"></div>
+              </div>
+              <div class="report-hero__body">
+                <button
+                  class="report-month-trigger"
+                  type="button"
+                  id="reportMonthTrigger"
+                  aria-label="选择报告月份"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                >
+                  <span id="reportMonthLabel">2026年06月</span>
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                </button>
+                <h2 class="report-hero__title">经营分析报告</h2>
+                <p class="report-hero__meta">
+                  <span class="report-hero__meta-label">报告统计周期：</span>
+                  <span id="reportPeriodLabel">2026-06-01～2026-06-30</span>
+                </p>
+                <p class="report-hero__site" id="reportSiteName">天合富家1#站点</p>
+                <p class="report-hero__company" id="reportCompanyName">天合富家</p>
+              </div>
+            </section>
+
+            <section class="report-block" aria-labelledby="reportOverviewTitle">
+              <h2 class="report-section-title" id="reportOverviewTitle">一、月度经营总览</h2>
+
+              <h3 class="report-sub-title">基本信息</h3>
+              <div class="report-info-text" id="reportBasicInfo">
+                <p>站点位于安徽省滁州市琅琊区。</p>
+                <p>光伏装机容量为 <strong>17.82</strong> MWp，安装逆变器 <strong>50</strong> 台。</p>
+                <p>储能装机容量为 <strong>20</strong> MWh，安装储能 <strong>50</strong> 台。</p>
+                <p>安装充电桩 <strong>0</strong> 台。</p>
+              </div>
+
+              <h3 class="report-sub-title">电量收益</h3>
+              <div class="report-revenue-row">
+                <div class="report-donut-wrap">
+                  <div class="report-chart report-chart--donut" id="reportDonutChart" role="img" aria-label="电量收益环形图"></div>
+                </div>
+                <ul class="report-legend" id="reportRevenueLegend" aria-label="收益构成">
+                  <li>
+                    <span class="report-legend__swatch report-legend__swatch--pv"></span>
+                    <span class="report-legend__label">光伏收益</span>
+                    <strong>86.1</strong>
+                    <span class="report-legend__unit">万元</span>
+                  </li>
+                  <li>
+                    <span class="report-legend__swatch report-legend__swatch--charge"></span>
+                    <span class="report-legend__label">充电收益</span>
+                    <strong>0</strong>
+                    <span class="report-legend__unit">元</span>
+                  </li>
+                  <li>
+                    <span class="report-legend__swatch report-legend__swatch--storage"></span>
+                    <span class="report-legend__label">储能收益</span>
+                    <strong>51.28</strong>
+                    <span class="report-legend__unit">万元</span>
+                  </li>
+                </ul>
+              </div>
+
+              <article class="report-metric-card" aria-label="微网供电量">
+                <div class="report-metric-card__head">
+                  <h3>微网供电量</h3>
+                  <span>单位：kWh</span>
+                </div>
+                <div class="report-metric-grid report-metric-grid--3">
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-solar-panel"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">163.24<span>万</span></p>
+                      <p class="report-metric-item__label">光伏发电量</p>
+                    </div>
+                  </div>
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-battery-full"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">100.36<span>万</span></p>
+                      <p class="report-metric-item__label">储能放电量</p>
+                    </div>
+                  </div>
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-tower-broadcast"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">1411.61<span>万</span></p>
+                      <p class="report-metric-item__label">电网下网电量</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="report-metric-card" aria-label="微网用电量">
+                <div class="report-metric-card__head">
+                  <h3>微网用电量</h3>
+                  <span>单位：kWh</span>
+                </div>
+                <div class="report-metric-grid">
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">0</p>
+                      <p class="report-metric-item__label">上网电量</p>
+                    </div>
+                  </div>
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-battery-half"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">114.59<span>万</span></p>
+                      <p class="report-metric-item__label">储能充电量</p>
+                    </div>
+                  </div>
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">1560.61<span>万</span></p>
+                      <p class="report-metric-item__label">负载用电量</p>
+                    </div>
+                  </div>
+                  <div class="report-metric-item">
+                    <span class="report-metric-item__icon" aria-hidden="true"><i class="fa-solid fa-charging-station"></i></span>
+                    <div>
+                      <p class="report-metric-item__value">0</p>
+                      <p class="report-metric-item__label">充电桩充电量</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <section class="report-block" aria-labelledby="reportPvTitle">
+              <h3 class="report-chart-title" id="reportPvTitle">1.1 光伏发电量&amp;收益</h3>
+              <div class="report-chart report-chart--combo" id="reportPvChart" role="img" aria-label="光伏发电量与收益图"></div>
+              <div class="report-analysis">
+                <h4>分析</h4>
+                <p>
+                  本项目电站光伏装机容量为 <strong>17.82</strong> MWp，2026年06月光伏月总发电量为
+                  <strong>163.24</strong> 万kWh，平均每日发电量为 <strong>5.44</strong> 万kWh，当年累计年发电量为
+                  <strong>892.31</strong> 万kWh。
+                </p>
+                <p>
+                  月总收益为 <strong>86.1</strong> 万元，其中自用收益 <strong>86.1</strong> 万元，上网收益
+                  <strong>0</strong> 元。
+                </p>
+              </div>
+            </section>
+
+            <section class="report-block" aria-labelledby="reportStorageTitle">
+              <h3 class="report-chart-title" id="reportStorageTitle">1.2 储能充放电量&amp;收益</h3>
+              <div class="report-chart report-chart--combo" id="reportStorageChart" role="img" aria-label="储能充放电量与收益图"></div>
+              <div class="report-analysis">
+                <h4>分析</h4>
+                <p>
+                  本项目2026年06月储能月总充电量为 <strong>114.59</strong> 万kWh，月总放电量为
+                  <strong>100.36</strong> 万kWh，累计年总充电量 <strong>730.18</strong> 万kWh，年总放电量
+                  <strong>642.89</strong> 万kWh。月总收益为 <strong>51.28</strong> 万元。
+                </p>
+              </div>
+            </section>
+
+            <section class="report-block" aria-labelledby="reportChargeTitle">
+              <h3 class="report-chart-title" id="reportChargeTitle">1.3 充电桩充电量&amp;收益</h3>
+              <div class="report-chart report-chart--combo" id="reportChargeChart" role="img" aria-label="充电桩充电量与收益图"></div>
+              <div class="report-analysis">
+                <h4>分析</h4>
+                <p>
+                  本项目2026年06月充电桩月总充电量为 <strong>0</strong> kWh，累计年总充电量
+                  <strong>0</strong> kWh，月总收益为 <strong>0</strong> 元。
+                </p>
+              </div>
+            </section>
+
+            <section class="report-block" aria-labelledby="reportIndicatorTitle">
+              <h2 class="report-section-title" id="reportIndicatorTitle">二、指标分析</h2>
+
+              <h3 class="report-chart-title">2.1 光伏消纳率</h3>
+              <div class="report-chart report-chart--combo" id="reportConsumeChart" role="img" aria-label="光伏消纳率图"></div>
+              <div class="report-analysis">
+                <h4>分析</h4>
+                <p>
+                  本月度，光伏总发电量 <strong>163.24</strong> 万kWh，光伏自用电量
+                  <strong>163.24</strong> 万kWh，本月光伏消纳率为 <strong>100</strong> %。
+                </p>
+              </div>
+
+              <h3 class="report-chart-title">2.2 度电成本</h3>
+              <div class="report-chart report-chart--combo" id="reportLcoeChart" role="img" aria-label="度电成本图"></div>
+              <div class="report-analysis">
+                <h4>分析</h4>
+                <p>
+                  本月度，总用电量 <strong>1560.61</strong> 万kWh，其中电网用电电量
+                  <strong>1411.61</strong> 万kWh，原始用电成本 <strong>0.57</strong> 元/kWh，使用光储系统后，用电成本为
+                  <strong>0.49</strong> 元/kWh，共节约 <strong>124.85</strong> 万元。
+                </p>
+              </div>
+            </section>
+          </section>
+        </main>
+
+        <div class="picker-overlay" id="reportMonthPicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭月份选择弹窗"></button>
+          <section class="picker-sheet report-month-sheet" role="dialog" aria-modal="true" aria-labelledby="reportMonthPickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="reportMonthPickerTitle">选择月份</h2>
+              <button class="picker-close" type="button" id="reportMonthPickerClose">取消</button>
+            </div>
+            <div class="report-month-picker-body">
+              <div class="report-month-picker-col" id="reportYearList" role="listbox" aria-label="年份"></div>
+              <div class="report-month-picker-col" id="reportMonthList" role="listbox" aria-label="月份"></div>
+            </div>
+            <button class="report-month-confirm" type="button" id="reportMonthConfirm">确定</button>
+          </section>
+        </div>
+
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./vendor/echarts/echarts.min.js"></script>
+    <script src="./js/function-report.js"></script>
+  </body>
+</html>

@@ -1,0 +1,453 @@
+.top-header-shell {
+  height: 106px;
+}
+
+.top-header-shell ~ .screen-content {
+  top: 0;
+  bottom: 0;
+  padding-top: 106px;
+  padding-bottom: 34px;
+}
+
+.report-screen {
+  background: #f5f7fa;
+}
+
+.title-btn--back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 4px;
+  border: 0;
+  background: transparent;
+  color: #4c75f2;
+  text-decoration: none;
+}
+
+.title-btn--back i {
+  font-size: 16px;
+}
+
+.report-shell {
+  min-height: 100%;
+  padding: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* —— 封面头图 —— */
+.report-hero {
+  position: relative;
+  min-height: 210px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.report-hero__visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 168px;
+  pointer-events: none;
+}
+
+.report-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.report-hero__mask {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, #ffffff 0%, #ffffff 18%, rgba(255, 255, 255, 0.55) 38%, transparent 58%),
+    linear-gradient(180deg, transparent 62%, #ffffff 100%);
+}
+
+.report-hero__body {
+  position: relative;
+  z-index: 1;
+  padding: 14px 16px 18px;
+}
+
+.report-month-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.report-month-trigger i {
+  font-size: 13px;
+  color: #8b95a7;
+}
+
+.report-hero__title {
+  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1f2c;
+  letter-spacing: 0.02em;
+}
+
+.report-hero__meta,
+.report-hero__site,
+.report-hero__company {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.report-hero__meta-label {
+  color: #8b95a7;
+}
+
+.report-hero__site {
+  margin-top: 2px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.report-hero__company {
+  color: #4a5568;
+}
+
+/* —— 区块 —— */
+.report-block {
+  background: #fff;
+  padding: 16px 16px 18px;
+  margin-bottom: 8px;
+}
+
+.report-section-title {
+  position: relative;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: #27c58d;
+}
+
+.report-sub-title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-chart-title {
+  margin: 4px 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-info-text {
+  margin: 0 0 20px;
+}
+
+.report-info-text p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #5a6578;
+}
+
+.report-info-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+/* —— 环形图 + 图例 —— */
+.report-revenue-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.report-donut-wrap {
+  min-width: 0;
+}
+
+.report-chart {
+  width: 100%;
+}
+
+.report-chart--donut {
+  height: 168px;
+}
+
+.report-chart--combo {
+  height: 220px;
+  margin-bottom: 4px;
+}
+
+.report-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.report-legend li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 6px;
+  font-size: 12px;
+  color: #5a6578;
+  line-height: 1.35;
+}
+
+.report-legend__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.report-legend__swatch--pv {
+  background: #2b6aff;
+}
+
+.report-legend__swatch--charge {
+  background: #00b5ff;
+}
+
+.report-legend__swatch--storage {
+  background: #9ad66a;
+}
+
+.report-legend__label {
+  color: #4a5568;
+}
+
+.report-legend strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-legend__unit {
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+/* —— 指标卡片 —— */
+.report-metric-card {
+  margin-top: 12px;
+  padding: 14px 12px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 6px 18px rgba(31, 45, 61, 0.04);
+}
+
+.report-metric-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.report-metric-card__head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-metric-card__head span {
+  font-size: 12px;
+  color: #98a2b3;
+}
+
+.report-metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 10px;
+}
+
+.report-metric-grid--3 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.report-metric-grid--3 .report-metric-item:last-child {
+  grid-column: 1 / -1;
+  max-width: 50%;
+}
+
+.report-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.report-metric-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #e8f8ef;
+  color: #27c58d;
+  font-size: 15px;
+}
+
+.report-metric-item__value {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.2;
+}
+
+.report-metric-item__value span {
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #98a2b3;
+}
+
+.report-metric-item__label {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #8b95a7;
+}
+
+/* —— 分析框 —— */
+.report-analysis {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f5f7fb;
+}
+
+.report-analysis h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.report-analysis p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #5a6578;
+}
+
+.report-analysis p:last-child {
+  margin-bottom: 0;
+}
+
+.report-analysis strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+/* —— 月份选择 —— */
+.report-month-sheet {
+  padding-bottom: 18px;
+}
+
+.report-month-picker-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-height: 240px;
+  overflow: hidden;
+  border-top: 1px solid #eef1f6;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.report-month-picker-col {
+  overflow: auto;
+  max-height: 240px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.report-month-picker-col::-webkit-scrollbar {
+  display: none;
+}
+
+.report-month-option {
+  display: block;
+  width: 100%;
+  padding: 14px 12px;
+  border: 0;
+  background: transparent;
+  color: #4a5568;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.report-month-option.is-active {
+  color: #4c75f2;
+  font-weight: 700;
+  background: rgba(76, 117, 242, 0.06);
+}
+
+.report-month-confirm {
+  display: block;
+  width: 100%;
+  margin: 14px 0 0;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: #4c75f2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.report-month-confirm:active {
+  opacity: 0.9;
+}
+
+@media (max-width: 430px) {
+  .top-header-shell ~ .screen-content {
+    padding-bottom: max(34px, env(safe-area-inset-bottom));
+  }
+}

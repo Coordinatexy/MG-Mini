@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>帮助中心 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/function-help.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="帮助中心页面">
+      <div class="ios-screen">
+        <div class="top-header-shell help-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <a class="title-btn title-btn--back" href="./function.html" aria-label="返回功能页"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></a>
+            <h1 class="title-text">帮助中心</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+
+        <main class="screen-content help-screen">
+          <section class="app-shell">
+            <section class="help-hero" aria-label="帮助搜索">
+              <p>你好，需要什么帮助？</p>
+              <label class="help-search" for="helpSearch">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="helpSearch" type="search" placeholder="搜索问题，如“如何切换运行模式”" autocomplete="off" />
+                <button type="button" id="helpSearchClear" aria-label="清空搜索" hidden><i class="fa-solid fa-circle-xmark"></i></button>
+              </label>
+            </section>
+
+            <section class="help-section help-video-section" id="strategyVideoSection" data-keywords="视频 教程 策略配置 运行模式 参数设置 策略启停 基础入门" aria-labelledby="videoHelpTitle">
+              <div class="help-section__heading">
+                <h2 id="videoHelpTitle">视频教程</h2><span>快速上手</span>
+              </div>
+              <button class="help-video-card" type="button" id="strategyVideoTrigger" aria-haspopup="dialog">
+                <span class="help-video-card__cover">
+                  <span class="help-video-card__play"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
+                  <span class="help-video-card__duration">03:28</span>
+                </span>
+                <span class="help-video-card__content">
+                  <b>策略配置教程</b>
+                  <small>从模式选择到策略启停，快速完成站点配置</small>
+                  <span class="help-video-card__meta"><i class="fa-regular fa-circle-play" aria-hidden="true"></i> 视频教程 · 基础入门</span>
+                </span>
+                <i class="fa-solid fa-chevron-right help-video-card__arrow" aria-hidden="true"></i>
+              </button>
+            </section>
+
+            <section class="help-section help-faq-section" aria-labelledby="faqTitle">
+              <div class="help-section__heading">
+                <h2 id="faqTitle">图文帮助</h2><span id="helpResultCount">6 个问题</span>
+              </div>
+              <div class="help-faq-list" id="helpFaqList">
+                <article class="help-faq" data-category="account" data-keywords="企业 切换 站点 选择">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>如何切换企业或站点？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>在「概览」或「功能」页面顶部点击当前企业名称，即可切换企业；点击站点名称可选择该企业下的其他站点。</div>
+                </article>
+                <article class="help-faq" data-category="energy" data-keywords="数据 更新 刷新 实时 延迟">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>能源数据多久更新一次？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>实时功率数据会按设备上报频率更新，统计电量与收益可能存在短暂延迟。如长时间未更新，请检查站点在线状态。</div>
+                </article>
+                <article class="help-faq" data-category="strategy" data-keywords="运行模式 策略 切换 启停">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>如何切换系统运行模式？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>进入「功能—运行模式」，选择目标模式并确认。切换前请留意当前设备状态及页面中的安全提示。</div>
+                </article>
+                <article class="help-faq" data-category="strategy" data-keywords="策略 失败 启动 告警">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>策略启动失败怎么办？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>请先确认站点在线、设备无严重告警且当前账号具备操作权限。仍无法启动时，可通过问题反馈上传提示截图。</div>
+                </article>
+                <article class="help-faq" data-category="energy" data-keywords="收益 计算 电价 光伏 储能">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>收益数据是如何计算的？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>收益根据站点电量、电价配置及运行策略综合计算，仅供经营分析参考，最终数据以结算账单为准。</div>
+                </article>
+                <article class="help-faq" data-category="account" data-keywords="离线 站点 设备 网络">
+                  <button class="help-faq__question" type="button" aria-expanded="false"><span>站点显示离线如何处理？</span><i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="help-faq__answer" hidden>请检查现场网络、网关和设备供电情况。恢复后通常会自动上线；若持续离线，请联系运维人员处理。</div>
+                </article>
+              </div>
+              <div class="help-empty" id="helpEmpty" hidden><i class="fa-regular fa-face-frown"></i><h3>未找到相关问题</h3><p>换个关键词试试，或向我们提交反馈</p></div>
+            </section>
+
+            <section class="help-contact" aria-label="联系支持">
+              <div class="help-contact__icon"><i class="fa-solid fa-headset"></i></div>
+              <div><h2>问题还没解决？</h2><p>提交问题，我们会尽快为你处理</p></div>
+              <a href="./function-feedback.html">问题反馈<i class="fa-solid fa-chevron-right"></i></a>
+            </section>
+          </section>
+        </main>
+
+        <div class="help-video-overlay" id="strategyVideoOverlay" aria-hidden="true">
+          <button class="help-video-backdrop" type="button" aria-label="关闭视频教程"></button>
+          <section class="help-video-sheet" role="dialog" aria-modal="true" aria-labelledby="strategyVideoTitle">
+            <div class="help-video-sheet__header">
+              <div><span>视频教程</span><h2 id="strategyVideoTitle">策略配置教程</h2></div>
+              <button type="button" class="help-video-close" aria-label="关闭"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="help-video-player" role="img" aria-label="策略配置教程视频占位区域">
+              <div class="help-video-player__visual"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+              <button type="button" class="help-video-player__play" aria-label="播放策略配置教程"><i class="fa-solid fa-play"></i></button>
+              <span class="help-video-player__hint">演示视频待接入</span>
+            </div>
+            <div class="help-video-sheet__body">
+              <h3>本节内容</h3>
+              <ol><li>选择目标企业与站点</li><li>设置运行模式和策略参数</li><li>确认配置并启动策略</li></ol>
+              <p>接入正式视频后，可直接在此区域播放，不影响现有图文帮助内容。</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./js/function-help.js"></script>
+  </body>
+</html>

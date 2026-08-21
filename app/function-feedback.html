@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>问题反馈 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/function-feedback.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="问题反馈页">
+      <div class="ios-screen">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <a class="title-btn title-btn--back" href="./function.html" aria-label="返回功能页">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <h1 class="title-text">问题反馈</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+
+        <main class="screen-content feedback-screen">
+          <section class="app-shell">
+            <nav class="feedback-tabs" aria-label="问题反馈切换">
+              <a class="feedback-tab active" href="./function-feedback.html" aria-current="page">问题反馈</a>
+              <a class="feedback-tab" href="./function-feedback-history.html">反馈记录</a>
+            </nav>
+
+            <section class="feedback-context-card" aria-label="当前企业与站点">
+              <div class="feedback-context-card__row">
+                <div class="feedback-context-card__field">
+                  <span class="feedback-context-card__label">当前企业</span>
+                  <span class="feedback-context-card__value" id="feedbackEnterpriseName">天合富家</span>
+                </div>
+              </div>
+              <div class="feedback-context-card__row">
+                <label class="feedback-context-card__field">
+                  <span class="feedback-context-card__label">当前站点</span>
+                  <div class="feedback-select-wrap">
+                    <select class="feedback-select" id="feedbackSiteSelect" aria-label="当前站点"></select>
+                    <i class="fa-solid fa-chevron-down feedback-select__icon" aria-hidden="true"></i>
+                  </div>
+                </label>
+              </div>
+            </section>
+
+            <form class="feedback-form" id="feedbackForm" novalidate>
+              <section class="feedback-section" aria-labelledby="feedbackDescTitle">
+                <div class="feedback-section__header">
+                  <h2 id="feedbackDescTitle">问题描述</h2>
+                </div>
+                <label class="visually-hidden" for="feedbackDescription">问题描述</label>
+                <div class="feedback-textarea-wrap">
+                  <textarea
+                    id="feedbackDescription"
+                    class="feedback-textarea"
+                    name="description"
+                    rows="5"
+                    maxlength="200"
+                    placeholder="请描述您遇到的问题或改进建议"
+                    aria-describedby="feedbackCharCount"
+                  ></textarea>
+                  <span class="feedback-char-count" id="feedbackCharCount" aria-live="polite" hidden>0/200</span>
+                </div>
+              </section>
+
+              <section class="feedback-section" aria-labelledby="feedbackImageTitle">
+                <div class="feedback-section__header">
+                  <h2 id="feedbackImageTitle">上传图片</h2>
+                </div>
+                <p class="feedback-hint">可补充截图，便于我们更快了解情况（选填，最多 4 张）</p>
+                <div class="feedback-uploader" id="feedbackUploader" role="group" aria-label="图片上传">
+                  <input
+                    type="file"
+                    id="feedbackFileInput"
+                    class="feedback-file-input"
+                    accept="image/jpeg,image/png,image/gif,image/webp,image/bmp,image/heic,image/heif"
+                    multiple
+                    hidden
+                  />
+                </div>
+              </section>
+
+              <button class="feedback-submit" type="submit" id="feedbackSubmitBtn">提交反馈</button>
+            </form>
+          </section>
+        </main>
+
+        <div class="home-indicator" aria-hidden="true"></div>
+        <div class="app-toast" id="appToast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+      </div>
+    </div>
+    <script src="./js/feedback-store.js"></script>
+    <script src="./js/function-feedback.js"></script>
+  </body>
+</html>

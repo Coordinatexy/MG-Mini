@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>消息 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./vendor/vant/index.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/placeholder.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="消息页面">
+      <div class="ios-screen">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <button class="title-btn title-btn--selector" type="button" id="messageEnterpriseSelectorTrigger" aria-haspopup="dialog" aria-expanded="false">
+              <span class="title-btn__name" id="messageCurrentEnterpriseName" data-enterprise-name>天合富家</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <h1 class="title-text">消息</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+        <main class="screen-content placeholder-screen">
+          <section class="app-shell">
+            <section class="site-control-panel" aria-label="站点状态">
+              <button class="site-switch" type="button" id="messageSiteSelectorTriggerInline" aria-label="切换站点" aria-haspopup="dialog" aria-expanded="false">
+                <span class="site-switch__name" id="messageCurrentSiteNameInline" data-site-name>天合富家1#站点</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <button class="filter-icon-button" type="button" id="messageFilterTrigger" aria-haspopup="dialog" aria-expanded="false" aria-label="打开筛选面板">
+                <i class="fa-solid fa-filter" aria-hidden="true"></i>
+                <span>筛选</span>
+                <span class="filter-icon-button__count" id="messageFilterCount" hidden aria-hidden="true">0</span>
+              </button>
+            </section>
+
+            <section class="segment-tabs segment-tabs--message" aria-label="告警状态切换">
+              <button class="segment-tab active" type="button" data-message-status="unrecovered" aria-selected="true">
+                未恢复
+                <span class="segment-tab__count" hidden>0</span>
+              </button>
+              <button class="segment-tab" type="button" data-message-status="recovered" aria-selected="false">
+                已恢复
+              </button>
+            </section>
+
+            <section class="message-panels" aria-label="告警消息列表">
+              <div class="message-panel" data-message-panel="unrecovered"></div>
+              <div class="message-panel" data-message-panel="recovered" hidden></div>
+            </section>
+          </section>
+        </main>
+        <nav class="tab-bar" aria-label="底部标签栏">
+          <a class="tab-item" href="./index.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+            <span>概览</span>
+          </a>
+          <a class="tab-item" href="./function.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
+            <span>功能</span>
+          </a>
+          <a class="tab-item active" href="./message.html" aria-current="page">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-comment-dots"></i></span>
+            <span>消息</span>
+          </a>
+          <a class="tab-item" href="./workbench.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-suitcase"></i></span>
+            <span>工作台</span>
+          </a>
+        </nav>
+
+        <div class="picker-overlay" id="messageEnterprisePicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭企业选择弹窗"></button>
+          <section class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="messageEnterprisePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="messageEnterprisePickerTitle">选择企业</h2>
+              <button class="picker-close" type="button" id="messageEnterprisePickerClose">取消</button>
+            </div>
+            <label class="picker-search" for="messageEnterprisePickerSearch">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input id="messageEnterprisePickerSearch" type="search" placeholder="搜索企业名称" autocomplete="off" />
+            </label>
+            <div class="picker-sheet__list" id="messageEnterprisePickerList"></div>
+          </section>
+        </div>
+
+        <div class="picker-overlay" id="messageSitePicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭站点选择弹窗"></button>
+          <section class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="messageSitePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="messageSitePickerTitle">选择站点</h2>
+              <button class="picker-close" type="button" id="messageSitePickerClose">取消</button>
+            </div>
+            <div class="picker-sheet__list" id="messageSitePickerList"></div>
+          </section>
+        </div>
+
+        <div class="picker-overlay" id="messageFilterPicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭筛选弹窗"></button>
+          <section class="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="messageFilterPickerTitle">
+            <div class="picker-sheet__header filter-sheet__header">
+              <h2 id="messageFilterPickerTitle">筛选</h2>
+              <button class="picker-close" type="button" id="messageFilterPickerClose">取消</button>
+            </div>
+            <div class="filter-sheet__groups" id="messageFilterGroups"></div>
+            <div class="filter-sheet__footer">
+              <button class="filter-reset" type="button" id="messageFilterPickerReset">重置</button>
+              <button class="filter-submit" type="button" id="messageFilterPickerSubmit">查询</button>
+            </div>
+          </section>
+        </div>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./vendor/vant/vant.min.js"></script>
+    <script src="./js/common-selector.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

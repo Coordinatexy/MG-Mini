@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工作台 - 天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./vendor/vant/index.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/placeholder.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="工作台页面">
+      <div class="ios-screen">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <button class="title-btn title-btn--selector" type="button" id="workbenchEnterpriseSelectorTrigger" aria-haspopup="dialog" aria-expanded="false">
+              <span class="title-btn__name" id="workbenchCurrentEnterpriseName" data-enterprise-name>天合富家</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <h1 class="title-text">工作台</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+        <main class="screen-content placeholder-screen">
+          <section class="app-shell">
+            <section class="placeholder-card">
+              <div class="placeholder-icon" aria-hidden="true"><i class="fa-solid fa-suitcase"></i></div>
+              <h2>工作台</h2>
+              <p>返回至零碳工作台</p>
+            </section>
+          </section>
+        </main>
+        <nav class="tab-bar" aria-label="底部标签栏">
+          <a class="tab-item" href="./index.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+            <span>概览</span>
+          </a>
+          <a class="tab-item" href="./function.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
+            <span>功能</span>
+          </a>
+          <a class="tab-item" href="./message.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-comment-dots"></i></span>
+            <span>消息</span>
+          </a>
+          <a class="tab-item active" href="./workbench.html" aria-current="page">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-suitcase"></i></span>
+            <span>工作台</span>
+          </a>
+        </nav>
+
+        <div class="picker-overlay" id="workbenchEnterprisePicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭企业选择弹窗"></button>
+          <section class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="workbenchEnterprisePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="workbenchEnterprisePickerTitle">选择企业</h2>
+              <button class="picker-close" type="button" id="workbenchEnterprisePickerClose">取消</button>
+            </div>
+            <div class="picker-sheet__list" id="workbenchEnterprisePickerList"></div>
+          </section>
+        </div>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./vendor/vant/vant.min.js"></script>
+    <script src="./js/common-selector.js"></script>
+  </body>
+</html>

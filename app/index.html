@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天工数智</title>
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./vendor/vant/index.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="ios-frame-wrapper" role="img" aria-label="天工数智 App 原型">
+      <div class="ios-screen">
+        <div class="top-header-shell">
+          <div class="status-bar" role="img" aria-label="状态栏"></div>
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <header class="title-bar" aria-label="页面标题">
+            <button class="title-btn title-btn--selector" type="button" id="enterpriseSelectorTrigger" aria-haspopup="dialog" aria-expanded="false" aria-label="切换企业">
+              <span class="title-btn__name" id="currentEnterpriseName" data-enterprise-name>天合富家</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <h1 class="title-text">概览</h1>
+            <div class="mini-capsule" aria-label="微信小程序胶囊按钮">
+              <img class="mini-left" src="./images/mini-capsule-menu.svg" alt="" aria-hidden="true" />
+              <div class="mini-divider" aria-hidden="true"></div>
+              <img class="mini-right" src="./images/mini-capsule-circle.svg" alt="" aria-hidden="true" />
+            </div>
+          </header>
+        </div>
+
+        <main class="screen-content home-screen">
+          <section class="app-shell" aria-label="首页">
+            <section class="site-control-panel" aria-label="站点状态">
+              <button class="site-switch" type="button" id="siteSelectorTriggerInline" aria-label="切换站点" aria-haspopup="dialog" aria-expanded="false">
+                <span class="site-switch__name" id="currentSiteNameInline" data-site-name>天合富家1#站点</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="site-status-group">
+                <div class="status-pill online" id="siteOnlineStatusPill" aria-label="站点在线状态" data-site-status="online">
+                  <span class="status-dot"></span>
+                  <span data-site-status-text>在线</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="tab-section" aria-label="业务切换标签">
+              <div class="segment-tabs" role="tablist" aria-label="业务切换">
+                <button class="segment-tab active" type="button" role="tab" aria-selected="true" data-tab-target="microgrid">微网</button>
+                <button class="segment-tab" type="button" role="tab" aria-selected="false" data-tab-target="grid">电网</button>
+                <button class="segment-tab" type="button" role="tab" aria-selected="false" data-tab-target="photovoltaic">光伏</button>
+                <button class="segment-tab" type="button" role="tab" aria-selected="false" data-tab-target="storage">储能</button>
+                <button class="segment-tab" type="button" role="tab" aria-selected="false" data-tab-target="charging">充电桩</button>
+              </div>
+            </section>
+
+            <section class="tab-panels" aria-live="polite">
+              <section class="energy-tab-panel microgrid-tab-panel" aria-label="微网看板" data-tab-panel="microgrid">
+                <section class="microgrid-mode-card overview-card">
+                  <div class="microgrid-mode-card__icon" aria-hidden="true"><i class="fa-solid fa-network-wired"></i></div>
+                  <div class="microgrid-mode-card__content">
+                    <p class="card-label card-label--microgrid">并网模式</p>
+                    <h2 class="microgrid-mode-card__title">峰谷套利|需量控制</h2>
+                  </div>
+                  <div class="microgrid-mode-card__weather" aria-hidden="true">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>27°C</span>
+                  </div>
+                </section>
+
+                <section class="microgrid-flow-card overview-card">
+                  <div class="card-header card-header--stacked">
+                    <div>
+                      <div class="card-label-row">
+                        <p class="card-label">能量全景</p>
+                        <button class="panorama-expand-btn" type="button" id="panoramaExpandTrigger" aria-label="放大能量全景，横屏展示">
+                          <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="chart-switch chart-switch--compact" role="tablist" aria-label="能量全景视图切换">
+                      <button class="chart-switch__item is-active" type="button" role="tab" aria-selected="true" data-panorama-tab="flow">能流</button>
+                      <button class="chart-switch__item" type="button" role="tab" aria-selected="false" data-panorama-tab="strategy">监控</button>
+                    </div>
+                  </div>
+                  <div class="microgrid-panorama-body" data-panorama-body>
+                  <div class="microgrid-panorama-panel" data-panorama-panel="flow">
+                  <div class="microgrid-flow-visual" aria-label="微网能源流向示意图">
+                    <svg class="microgrid-flow-lines" viewBox="0 0 720 360" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="microgridFlowGradient" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#d5dbe8" />
+                          <stop offset="100%" stop-color="#bfc8da" />
+                        </linearGradient>
+                      </defs>
+                      <g class="microgrid-flow-lines__static">
+                        <path d="M88 74H308C324 74 336 86 336 102V166"></path>
+                        <path d="M632 74H412C396 74 384 86 384 102V166"></path>
+                        <path d="M88 286H308C324 286 336 274 336 258V194"></path>
+                        <path d="M632 286H412C396 286 384 274 384 258V194"></path>
+                        <path d="M360 166V194"></path>
+                        <path d="M360 102V166"></path>
+                      </g>
+                      <g class="microgrid-flow-lines__flow">
+                        <path d="M88 74H308C324 74 336 86 336 102V166"></path>
+                        <path d="M632 74H412C396 74 384 86 384 102V166"></path>
+                        <path d="M632 286H412C396 286 384 274 384 258V194"></path>
+                      </g>
+                    </svg>
+                    <div class="microgrid-flow-node microgrid-flow-node--pv">
+                      <div class="microgrid-flow-node__icon"><i class="fa-solid fa-solar-panel"></i></div>
+                      <span>光伏</span>
+                    </div>
+                    <div class="microgrid-flow-node microgrid-flow-node--grid">
+                      <div class="microgrid-flow-node__icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+                      <span>电网</span>
+                    </div>
+                    <div class="microgrid-flow-node microgrid-flow-node--storage">
+                      <div class="microgrid-flow-node__icon"><i class="fa-solid fa-battery-half"></i></div>
+                      <span>储能</span>
+                    </div>
+                    <div class="microgrid-flow-node microgrid-flow-node--load">
+                      <div class="microgrid-flow-node__icon"><i class="fa-solid fa-building"></i></div>
+                      <span>负载</span>
+                    </div>
+                    <div class="microgrid-flow-center">
+                      <div class="microgrid-flow-center__ring"></div>
+                      <div class="microgrid-flow-center__core">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>微网</span>
+                      </div>
+                    </div>
+                    <div class="microgrid-flow-label microgrid-flow-label--plain microgrid-flow-label--pv">发电 976.43kW</div>
+                    <div class="microgrid-flow-label microgrid-flow-label--plain microgrid-flow-label--grid">上网 309.4kW</div>
+                    <div class="microgrid-flow-label microgrid-flow-label--plain microgrid-flow-label--storage">SOC 87.4%</div>
+                    <div class="microgrid-flow-label microgrid-flow-label--plain microgrid-flow-label--storage-bottom">待机 0kW</div>
+                    <div class="microgrid-flow-label microgrid-flow-label--plain microgrid-flow-label--load">用电 667.03kW</div>
+                  </div>
+                  <p class="panorama-flow__hint">瞬时功率仅供参考，时段趋势请切换「监控」查看</p>
+                  </div>
+                  <div class="microgrid-panorama-panel microgrid-panorama-panel--monitor" data-panorama-panel="strategy" hidden aria-label="监控视图">
+                    <div class="panorama-monitor" data-panorama-monitor>
+                      <div class="panorama-monitor__legend" data-monitor-legend aria-label="图表图例">
+                        <div class="panorama-monitor__legend-group">
+                          <span class="panorama-monitor__legend-title">核心数据</span>
+                          <div class="panorama-monitor__legend-items">
+                            <button class="panorama-monitor__legend-item is-active" type="button" data-legend-key="soc" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dot" style="--dot-color:#4c75f2"></i>储能SOC
+                            </button>
+                            <button class="panorama-monitor__legend-item is-active" type="button" data-legend-key="grid" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dot" style="--dot-color:#33c46a"></i>电网功率
+                            </button>
+                          </div>
+                        </div>
+                        <div class="panorama-monitor__legend-group">
+                          <span class="panorama-monitor__legend-title">参考数据</span>
+                          <div class="panorama-monitor__legend-items">
+                            <button class="panorama-monitor__legend-item is-active" type="button" data-legend-key="storage" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dot" style="--dot-color:#9b59f5"></i>储能功率
+                            </button>
+                            <button class="panorama-monitor__legend-item is-active" type="button" data-legend-key="pv" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dot" style="--dot-color:#f5a623"></i>光伏发电功率
+                            </button>
+                            <button class="panorama-monitor__legend-item is-active" type="button" data-legend-key="load" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dot" style="--dot-color:#e74c5c"></i>总负荷功率
+                            </button>
+                          </div>
+                        </div>
+                        <div class="panorama-monitor__legend-group panorama-monitor__legend-group--calibration" data-legend-group="calibration">
+                          <span class="panorama-monitor__legend-title">标定数据</span>
+                          <div class="panorama-monitor__legend-items">
+                            <button class="panorama-monitor__legend-item panorama-monitor__legend-item--threshold is-active" type="button" data-legend-key="overLimit" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dash"></i>超限阈值
+                            </button>
+                            <button class="panorama-monitor__legend-item panorama-monitor__legend-item--threshold is-active" type="button" data-legend-key="reverseFlow" aria-pressed="true">
+                              <i class="panorama-monitor__legend-dash"></i>逆流阈值
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panorama-monitor__chart-wrap">
+                        <div class="panorama-monitor__loading" data-monitor-loading hidden aria-live="polite" aria-busy="false">
+                          <span class="panorama-monitor__loading-spinner" aria-hidden="true"></span>
+                          <span class="panorama-monitor__loading-text">加载中</span>
+                        </div>
+                        <div class="panorama-monitor__chart" data-monitor-chart role="img" aria-label="能量监控时序图表"></div>
+                      </div>
+                      <p class="panorama-monitor__hint" aria-live="polite">建议点击放大按钮后横屏查看</p>
+                    </div>
+                  </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">微网收益</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid benefit-grid--microgrid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">当月收益</span>
+                      <div class="benefit-value">7184.22 <small>元</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">当年收益</span>
+                      <div class="benefit-value">38.16万 <small>元</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">累计收益</span>
+                      <div class="benefit-value">39.19万 <small>元</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">今日供电</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid benefit-grid--microgrid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">下网电量</span>
+                      <div class="benefit-value">1449 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">光伏发电量</span>
+                      <div class="benefit-value">2118.1 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">储能放电量</span>
+                      <div class="benefit-value">144 <small>kWh</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">今日用电</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid benefit-grid--microgrid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">上网电量</span>
+                      <div class="benefit-value">287 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">储能充电量</span>
+                      <div class="benefit-value">903 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">负载用电量</span>
+                      <div class="benefit-value">2521.1 <small>kWh</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card social-contribution-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">社会贡献</p>
+                    </div>
+                  </div>
+                  <div class="microgrid-contribution-grid">
+                    <div class="microgrid-contribution-card microgrid-contribution-card--blue">
+                      <div class="microgrid-contribution-card__label">CO₂减排量</div>
+                      <div class="microgrid-contribution-card__value">556.85 <small>吨</small></div>
+                    </div>
+                    <div class="microgrid-contribution-card microgrid-contribution-card--green">
+                      <div class="microgrid-contribution-card__label">等效植树量</div>
+                      <div class="microgrid-contribution-card__value">750 <small>棵</small></div>
+                    </div>
+                    <div class="microgrid-contribution-card microgrid-contribution-card--peach">
+                      <div class="microgrid-contribution-card__label">节约标准煤</div>
+                      <div class="microgrid-contribution-card__value">286.38 <small>吨</small></div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+              <section class="energy-tab-panel grid-tab-panel" aria-label="电网看板" data-tab-panel="grid">
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">效益总览</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日下网电量</span>
+                      <div class="benefit-value">3031 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日上网电量</span>
+                      <div class="benefit-value">0 <small>kWh</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card chart-card">
+                  <div class="card-header card-header--stacked">
+                    <div>
+                      <p class="card-label">电网概况</p>
+                    </div>
+                    <div class="chart-switch overview-range-switch" role="tablist" aria-label="统计维度切换">
+                      <button class="chart-switch__item" type="button" data-range="day">日</button>
+                      <button class="chart-switch__item is-active" type="button" data-range="month">月</button>
+                      <button class="chart-switch__item" type="button" data-range="year">年</button>
+                      <button class="chart-switch__item" type="button" data-range="total">累计</button>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">下网电量</span>
+                      <div class="benefit-value">5404 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">上网电量</span>
+                      <div class="benefit-value">0 <small>kWh</small></div>
+                    </div>
+                  </div>
+                  <div class="period-selector grid-period-selector" aria-label="周期选择">
+                    <button class="period-selector__nav" type="button" aria-label="上一周期"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="period-selector__value" type="button" aria-label="选择日期">2026-07-01 <i class="fa-regular fa-calendar"></i></button>
+                    <button class="period-selector__nav" type="button" aria-label="下一周期"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+                  <div class="chart-area grid-chart" aria-label="电网运行情况图表">
+                    <div class="chart-axis chart-axis--y">
+                      <span>530</span>
+                      <span>424</span>
+                      <span>318</span>
+                      <span>212</span>
+                      <span>106</span>
+                      <span>0</span>
+                    </div>
+                    <div class="chart-plot">
+                      <div class="chart-bars chart-bars--grid">
+                        <span class="chart-bar"><i style="height: 48px"></i><small>1</small></span>
+                        <span class="chart-bar"><i style="height: 48px"></i><small>2</small></span>
+                        <span class="chart-bar"><i style="height: 38px"></i><small>3</small></span>
+                        <span class="chart-bar"><i style="height: 34px"></i><small>4</small></span>
+                        <span class="chart-bar"><i style="height: 38px"></i><small>5</small></span>
+                        <span class="chart-bar"><i style="height: 34px"></i><small>6</small></span>
+                        <span class="chart-bar"><i style="height: 68px"></i><small>7</small></span>
+                        <span class="chart-bar"><i style="height: 168px"></i><small>8</small></span>
+                        <span class="chart-bar"><i style="height: 190px"></i><small>9</small></span>
+                        <span class="chart-bar"><i style="height: 172px"></i><small>10</small></span>
+                        <span class="chart-bar"><i style="height: 188px"></i><small>11</small></span>
+                        <span class="chart-bar"><i style="height: 198px"></i><small>12</small></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart-legend grid-chart-legend"><span class="chart-legend__dot"></span>电网下网电量 <span class="chart-legend__dot chart-legend__dot--charge"></span>电网上网电量</div>
+                </section>
+              </section>
+              <section class="energy-tab-panel photovoltaic-tab-panel" aria-label="光伏看板" data-tab-panel="photovoltaic">
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">效益总览</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid benefit-grid--photovoltaic-overview">
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日发电量</span>
+                      <div class="benefit-value">592.5 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日光伏收益</span>
+                      <div class="benefit-value">182.01 <small>元</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">设备统计</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">装机容量</span>
+                      <div class="benefit-value">1.6 <small>MWp</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">逆变器数量</span>
+                      <div class="benefit-value">1 <small>台</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card chart-card">
+                  <div class="card-header card-header--stacked">
+                    <div>
+                      <p class="card-label">光伏概况</p>
+                    </div>
+                    <div class="chart-switch overview-range-switch" role="tablist" aria-label="统计维度切换">
+                      <button class="chart-switch__item" type="button" data-range="day">日</button>
+                      <button class="chart-switch__item is-active" type="button" data-range="month">月</button>
+                      <button class="chart-switch__item" type="button" data-range="year">年</button>
+                      <button class="chart-switch__item" type="button" data-range="total">累计</button>
+                    </div>
+                  </div>
+
+                  <div class="period-selector" aria-label="周期选择">
+                    <button class="period-selector__nav" type="button" aria-label="上一周期"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="period-selector__value" type="button" aria-label="选择日期">2026-07-01 <i class="fa-regular fa-calendar"></i></button>
+                    <button class="period-selector__nav" type="button" aria-label="下一周期"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="benefit-grid benefit-grid--metrics photovoltaic-metrics-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">发电量</span>
+                      <div class="benefit-value">2680.6 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">光伏收益</span>
+                      <div class="benefit-value">1044.93 <small>元</small></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-area photovoltaic-chart" aria-label="光伏运行情况图表">
+                    <div class="chart-axis chart-axis--y">
+                      <span>490</span>
+                      <span>392</span>
+                      <span>294</span>
+                      <span>196</span>
+                      <span>98</span>
+                      <span>0</span>
+                    </div>
+                    <div class="chart-plot">
+                      <div class="chart-bars chart-bars--photovoltaic">
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>1</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>2</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>3</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>4</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>5</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px"></i><small>6</small></span>
+                        <span class="chart-bar"><i style="height: 8px"></i><small>7</small></span>
+                        <span class="chart-bar"><i style="height: 32px"></i><small>8</small></span>
+                        <span class="chart-bar"><i style="height: 72px"></i><small>9</small></span>
+                        <span class="chart-bar"><i style="height: 136px"></i><small>10</small></span>
+                        <span class="chart-bar"><i style="height: 158px"></i><small>11</small></span>
+                        <span class="chart-bar"><i style="height: 196px"></i><small>12</small></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart-legend"><span class="chart-legend__dot chart-legend__dot--photovoltaic"></span>光伏发电量</div>
+                </section>
+              </section>
+              <section class="energy-tab-panel storage-tab-panel" aria-label="储能看板" data-tab-panel="storage">
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">效益总览</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid benefit-grid--storage-overview">
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日充电量</span>
+                      <div class="benefit-value">29 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日放电量</span>
+                      <div class="benefit-value">397 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日储能收益</span>
+                      <div class="benefit-value">197.76 <small>元</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">设备统计</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">装机容量</span>
+                      <div class="benefit-value">1.04 <small>MWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">储能数量</span>
+                      <div class="benefit-value">4 <small>台</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card chart-card">
+                  <div class="card-header card-header--stacked">
+                    <div>
+                      <p class="card-label">储能概况</p>
+                    </div>
+                    <div class="chart-switch overview-range-switch" role="tablist" aria-label="统计维度切换">
+                      <button class="chart-switch__item" type="button" data-range="day">日</button>
+                      <button class="chart-switch__item is-active" type="button" data-range="month">月</button>
+                      <button class="chart-switch__item" type="button" data-range="year">年</button>
+                      <button class="chart-switch__item" type="button" data-range="total">累计</button>
+                    </div>
+                  </div>
+
+                  <div class="period-selector" aria-label="周期选择">
+                    <button class="period-selector__nav" type="button" aria-label="上一周期"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="period-selector__value" type="button" aria-label="选择月份">2026-06 <i class="fa-regular fa-calendar"></i></button>
+                    <button class="period-selector__nav" type="button" aria-label="下一周期"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="benefit-grid benefit-grid--metrics storage-metrics-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">充电量</span>
+                      <div class="benefit-value">2万 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">放电量</span>
+                      <div class="benefit-value">3.62万 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">储能收益</span>
+                      <div class="benefit-value">2.02万 <small>元</small></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-area storage-chart" aria-label="储能运行情况图表">
+                    <div class="chart-axis chart-axis--y">
+                      <span>1300</span>
+                      <span>1040</span>
+                      <span>780</span>
+                      <span>520</span>
+                      <span>260</span>
+                      <span>0</span>
+                    </div>
+                    <div class="chart-plot">
+                      <div class="chart-bars chart-bars--storage">
+                        <span class="chart-bar"><i style="height: 158px;"></i><small>1</small></span>
+                        <span class="chart-bar"><i style="height: 148px;"></i><small>2</small></span>
+                        <span class="chart-bar"><i style="height: 166px;"></i><small>3</small></span>
+                        <span class="chart-bar"><i style="height: 154px;"></i><small>4</small></span>
+                        <span class="chart-bar"><i style="height: 172px;"></i><small>5</small></span>
+                        <span class="chart-bar"><i style="height: 160px;"></i><small>6</small></span>
+                        <span class="chart-bar"><i style="height: 182px;"></i><small>7</small></span>
+                        <span class="chart-bar"><i style="height: 168px;"></i><small>8</small></span>
+                        <span class="chart-bar"><i style="height: 176px;"></i><small>9</small></span>
+                        <span class="chart-bar"><i style="height: 152px;"></i><small>10</small></span>
+                        <span class="chart-bar"><i style="height: 170px;"></i><small>11</small></span>
+                        <span class="chart-bar"><i style="height: 190px;"></i><small>12</small></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart-legend storage-chart-legend">
+                    <span class="chart-legend__dot chart-legend__dot--discharge"></span>储能放电量
+                    <span class="chart-legend__dot chart-legend__dot--charge"></span>储能充电量
+                  </div>
+                </section>
+              </section>
+
+              <section class="energy-tab-panel charging-tab-panel" aria-label="充电站看板" data-tab-panel="charging">
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">效益总览</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日充电量</span>
+                      <div class="benefit-value">0 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">今日充电收益</span>
+                      <div class="benefit-value">0 <small>元</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card">
+                  <div class="card-header">
+                    <div>
+                      <p class="card-label">设备统计</p>
+                    </div>
+                  </div>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <span class="benefit-label">直流桩数量</span>
+                      <div class="benefit-value">3 <small>台</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">交流桩数量</span>
+                      <div class="benefit-value">0 <small>台</small></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="overview-card chart-card">
+                  <div class="card-header card-header--stacked">
+                    <div>
+                      <p class="card-label">充电概况</p>
+                    </div>
+                    <div class="chart-switch overview-range-switch" role="tablist" aria-label="统计维度切换">
+                      <button class="chart-switch__item" type="button" data-range="day">日</button>
+                      <button class="chart-switch__item is-active" type="button" data-range="month">月</button>
+                      <button class="chart-switch__item" type="button" data-range="year">年</button>
+                      <button class="chart-switch__item" type="button" data-range="total">累计</button>
+                    </div>
+                  </div>
+
+                  <div class="period-selector" aria-label="周期选择">
+                    <button class="period-selector__nav" type="button" aria-label="上一周期"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="period-selector__value" type="button" aria-label="选择月份">2024-07 <i class="fa-regular fa-calendar"></i></button>
+                    <button class="period-selector__nav" type="button" aria-label="下一周期"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="benefit-grid benefit-grid--metrics">
+                    <div class="benefit-item">
+                      <span class="benefit-label">充电量</span>
+                      <div class="benefit-value">87.35 <small>kWh</small></div>
+                    </div>
+                    <div class="benefit-item">
+                      <span class="benefit-label">充电收益</span>
+                      <div class="benefit-value">0 <small>元</small></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-area" aria-label="充电站充电量图表">
+                    <div class="chart-axis chart-axis--y">
+                      <span>45</span>
+                      <span>36</span>
+                      <span>27</span>
+                      <span>18</span>
+                      <span>9</span>
+                      <span>0</span>
+                    </div>
+                    <div class="chart-plot">
+                      <div class="chart-bars">
+                        <span class="chart-bar"><i style="height: 186px;"></i><small>2</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>3</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>4</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>5</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>6</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>7</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>8</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>9</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>10</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>11</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>12</small></span>
+                        <span class="chart-bar is-muted"><i style="height: 2px;"></i><small>13</small></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart-legend"><span class="chart-legend__dot"></span>充电站充电量</div>
+                </section>
+              </section>
+            </section>
+          </section>
+        </main>
+
+        <nav class="tab-bar" aria-label="底部标签栏">
+          <a class="tab-item active" href="./index.html" aria-current="page">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+            <span>概览</span>
+          </a>
+          <a class="tab-item" href="./function.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
+            <span>功能</span>
+          </a>
+          <a class="tab-item" href="./message.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-comment-dots"></i></span>
+            <span>消息</span>
+          </a>
+          <a class="tab-item" href="./workbench.html">
+            <span class="tab-icon" aria-hidden="true"><i class="fa-solid fa-suitcase"></i></span>
+            <span>工作台</span>
+          </a>
+        </nav>
+
+        <div class="picker-overlay" id="enterprisePicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭企业选择弹窗"></button>
+          <section class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="enterprisePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="enterprisePickerTitle">选择企业</h2>
+              <button class="picker-close" type="button" id="enterprisePickerClose">取消</button>
+            </div>
+            <label class="picker-search" for="enterprisePickerSearch">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input id="enterprisePickerSearch" type="search" placeholder="搜索企业名称" autocomplete="off" />
+            </label>
+            <div class="picker-sheet__list" id="enterprisePickerList"></div>
+          </section>
+        </div>
+
+        <div class="picker-overlay" id="sitePicker" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭站点选择弹窗"></button>
+          <section class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="sitePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="sitePickerTitle">选择站点</h2>
+              <button class="picker-close" type="button" id="sitePickerClose">取消</button>
+            </div>
+            <div class="picker-sheet__list" id="sitePickerList"></div>
+          </section>
+        </div>
+
+        <div class="picker-overlay" id="panoramaDatePickerOverlay" aria-hidden="true">
+          <button class="picker-backdrop" type="button" aria-label="关闭日期选择弹窗"></button>
+          <section class="picker-sheet panorama-date-sheet" role="dialog" aria-modal="true" aria-labelledby="panoramaDatePickerTitle">
+            <div class="picker-sheet__header">
+              <h2 id="panoramaDatePickerTitle">选择日期</h2>
+              <button class="picker-close" type="button" id="panoramaDatePickerClose">取消</button>
+            </div>
+            <div class="panorama-date-sheet__calendar" id="panoramaDateCalendar" aria-label="日历"></div>
+          </section>
+        </div>
+
+        <div class="app-toast" id="appToast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+
+        <div class="panorama-expand-overlay" id="panoramaExpandOverlay" aria-hidden="true">
+          <div class="panorama-expand-overlay__stage">
+            <header class="panorama-expand-overlay__header">
+              <div class="panorama-expand-overlay__title-group">
+                <h2 class="panorama-expand-overlay__title">能量全景</h2>
+                <button class="panorama-expand-overlay__close" type="button" id="panoramaExpandClose" aria-label="退出横屏放大">
+                  <i class="fa-solid fa-compress" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="panorama-expand-overlay__actions">
+                <div class="chart-switch chart-switch--compact" role="tablist" aria-label="能量全景视图切换">
+                  <button class="chart-switch__item is-active" type="button" role="tab" aria-selected="true" data-panorama-tab="flow">能流</button>
+                  <button class="chart-switch__item" type="button" role="tab" aria-selected="false" data-panorama-tab="strategy">监控</button>
+                </div>
+              </div>
+              <div class="panorama-expand-overlay__tools">
+                <div class="panorama-date-picker" id="panoramaExpandDatePicker" hidden aria-label="监控日期选择">
+                  <button class="panorama-date-picker__nav" type="button" id="panoramaDatePrev" aria-label="上一日">
+                    <span class="panorama-date-picker__arrow panorama-date-picker__arrow--left" aria-hidden="true"></span>
+                  </button>
+                  <button class="panorama-date-picker__date" type="button" id="panoramaDateTrigger" aria-label="选择日期">
+                    <span id="panoramaDateLabel">2026-07-03</span>
+                  </button>
+                  <button class="panorama-date-picker__nav" type="button" id="panoramaDateNext" aria-label="下一日">
+                    <span class="panorama-date-picker__arrow panorama-date-picker__arrow--right" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </header>
+            <div class="panorama-expand-overlay__content" data-panorama-expand-host></div>
+          </div>
+        </div>
+
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script src="./vendor/vant/vant.min.js"></script>
+    <script src="./vendor/echarts/echarts.min.js"></script>
+    <script src="./js/common-selector.js"></script>
+    <script src="./js/panorama-monitor-chart.js"></script>
+    <script src="./js/panorama-date-picker.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

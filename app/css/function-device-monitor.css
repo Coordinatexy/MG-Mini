@@ -1,0 +1,81 @@
+.top-header-shell {
+  height: 106px;
+}
+
+.top-header-shell ~ .screen-content {
+  top: 0;
+  bottom: 0;
+  padding-top: 106px;
+  padding-bottom: 34px;
+}
+
+.title-btn--back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 12px;
+  border: 0;
+  background: transparent;
+  color: #4c75f2;
+  text-decoration: none;
+}
+
+.title-btn--back i {
+  font-size: 16px;
+}
+
+.device-monitor-screen {
+  background: linear-gradient(180deg, #f4f7ff 0%, #eef3fb 100%);
+}
+
+.device-monitor-screen .app-shell {
+  min-height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.device-monitor-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 36px rgba(55, 88, 179, 0.08);
+}
+
+.device-monitor-placeholder__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(64, 112, 230, 0.1);
+  color: #4070e6;
+  margin-bottom: 16px;
+}
+
+.device-monitor-placeholder__icon i {
+  font-size: 24px;
+}
+
+.device-monitor-placeholder h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #17233d;
+}
+
+.device-monitor-placeholder p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #74819a;
+}

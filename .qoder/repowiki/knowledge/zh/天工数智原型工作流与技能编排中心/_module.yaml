@@ -1,0 +1,11 @@
+schema_version: 1
+module_path: ""
+title: 天工数智原型工作流与技能编排中心
+scope:
+    - .agents/
+    - .style/
+    - docs/
+    - AGENTS.md
+source_files: []
+depends_on: []
+related_to: []
