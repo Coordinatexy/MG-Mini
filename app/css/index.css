@@ -2883,3 +2883,167 @@ body.is-panorama-expanded .ios-screen {
   width: 852px;
   height: 393px;
 }
+
+/* 告警迁移引导 · 弱提示（指向底部【消息】） */
+.migrate-guide {
+  position: absolute;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+}
+
+.migrate-guide[hidden] {
+  display: none !important;
+}
+
+.migrate-guide__bubble {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 96px;
+  pointer-events: auto;
+  background: rgba(23, 35, 61, 0.94);
+  border-radius: 16px;
+  padding: 12px 36px 10px 14px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.28);
+  color: #fff;
+  animation: migrate-guide-enter 0.28s ease-out;
+}
+
+.migrate-guide__bubble.is-leaving {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@keyframes migrate-guide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.migrate-guide__text {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.migrate-guide__text strong {
+  font-weight: 800;
+  color: #9db8ff;
+}
+
+.migrate-guide__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.migrate-guide__btn {
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 7px 14px;
+  line-height: 1;
+}
+
+.migrate-guide__btn--text {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.migrate-guide__btn--text:active {
+  opacity: 0.7;
+}
+
+.migrate-guide__btn--primary {
+  background: linear-gradient(135deg, #4c75f2, #6aa5ff);
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(76, 117, 242, 0.4);
+}
+
+.migrate-guide__btn--primary:active {
+  transform: scale(0.97);
+}
+
+.migrate-guide__close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.migrate-guide__close:active {
+  opacity: 0.7;
+}
+
+.migrate-guide__arrow {
+  position: absolute;
+  left: 62.5%;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  background: rgba(23, 35, 61, 0.94);
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 3px;
+}
+
+.tab-item.is-guide-target {
+  position: relative;
+}
+
+.tab-item.is-guide-target::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.18);
+  animation: migrate-guide-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes migrate-guide-dot {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.25);
+    opacity: 0.75;
+  }
+}
+
+.ios-screen.is-panorama-expanded .migrate-guide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .migrate-guide__bubble {
+    bottom: 78px;
+  }
+}

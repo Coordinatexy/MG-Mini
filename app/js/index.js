@@ -791,3 +791,83 @@ document.addEventListener('keydown', (event) => {
   }
 });
 window.addEventListener('resize', syncPanoramaLandscapeScale);
+
+/* 告警迁移引导 · 进入概览页弱提示（点击“不再提示”后不再展示） */
+(() => {
+  const guide = document.getElementById('alarmMigrateGuide');
+  if (!guide) return;
+  if (!document.querySelector('.home-screen')) return;
+  const bubble = guide.querySelector('.migrate-guide__bubble');
+  const closeBtn = document.getElementById('alarmMigrateGuideClose');
+  const neverShowBtn = document.getElementById('alarmMigrateGuideDismiss');
+  const goBtn = document.getElementById('alarmMigrateGuideGo');
+  const messageTab = document.querySelector('.tab-bar .tab-item[href="./message.html"]');
+  const NEVER_SHOW_KEY = 'mg-mini:alarm-migrate-guide-dismissed:v1';
+  const AUTO_DISMISS_MS = 10000;
+  let autoDismissTimer = 0;
+  let isShown = false;
+
+  const shouldNotShow = () => {
+    try {
+      return window.localStorage.getItem(NEVER_SHOW_KEY) === '1';
+    } catch {
+      return false;
+    }
+  };
+  const markNeverShow = () => {
+    try {
+      window.localStorage.setItem(NEVER_SHOW_KEY, '1');
+    } catch {
+      /* 存储不可用时仅本次关闭，不阻断页面 */
+    }
+  };
+
+  const hideGuide = (persist) => {
+    if (persist) markNeverShow();
+    if (!isShown) return;
+    isShown = false;
+    if (autoDismissTimer) {
+      window.clearTimeout(autoDismissTimer);
+      autoDismissTimer = 0;
+    }
+    messageTab?.classList.remove('is-guide-target');
+    if (bubble) {
+      bubble.classList.add('is-leaving');
+      window.setTimeout(() => {
+        guide.hidden = true;
+        guide.setAttribute('aria-hidden', 'true');
+      }, 200);
+    } else {
+      guide.hidden = true;
+      guide.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  const showGuide = () => {
+    if (isShown || shouldNotShow()) return;
+    if (panoramaExpandState.isOpen) return;
+    isShown = true;
+    bubble?.classList.remove('is-leaving');
+    guide.hidden = false;
+    guide.setAttribute('aria-hidden', 'false');
+    messageTab?.classList.add('is-guide-target');
+    autoDismissTimer = window.setTimeout(() => hideGuide(false), AUTO_DISMISS_MS);
+  };
+
+  closeBtn?.addEventListener('click', () => hideGuide(false));
+  neverShowBtn?.addEventListener('click', () => hideGuide(true));
+  goBtn?.addEventListener('click', () => {
+    hideGuide(false);
+    try {
+      window.saveMGSiteContext?.('index', 'message');
+    } catch {
+      /* 忽略站点上下文透传失败，直接跳转 */
+    }
+    window.location.href = './message.html';
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isShown) hideGuide(false);
+  });
+
+  window.setTimeout(showGuide, 600);
+})();

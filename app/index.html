@@ -716,6 +716,20 @@
 
         <div class="app-toast" id="appToast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
 
+        <div class="migrate-guide" id="alarmMigrateGuide" hidden aria-hidden="true">
+          <div class="migrate-guide__bubble" role="dialog" aria-modal="false" aria-label="告警迁移引导提示">
+            <button class="migrate-guide__close" type="button" id="alarmMigrateGuideClose" aria-label="关闭提示">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <p class="migrate-guide__text">功能入口调整：原功能模块的故障告警、事件告警已迁移并合并至<strong>【消息】</strong>，请前往消息模块统一查看。</p>
+            <div class="migrate-guide__actions">
+              <button class="migrate-guide__btn migrate-guide__btn--text" type="button" id="alarmMigrateGuideDismiss">不再提示</button>
+              <button class="migrate-guide__btn migrate-guide__btn--primary" type="button" id="alarmMigrateGuideGo">前往查看</button>
+            </div>
+            <span class="migrate-guide__arrow" aria-hidden="true"></span>
+          </div>
+        </div>
+
         <div class="panorama-expand-overlay" id="panoramaExpandOverlay" aria-hidden="true">
           <div class="panorama-expand-overlay__stage">
             <header class="panorama-expand-overlay__header">
